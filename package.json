@@ -1,5 +1,29 @@
 {
-  "dependencies": {
-    "playwright": "^0.15.0"
-  }
+    "name": "playwright",
+    "version": "1.0.0",
+    "description": "### Table of Contents",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "dependencies": {
+        "cross-env": "^7.0.2",
+        "playwright": "^0.15.0",
+        "playwright-test": "^0.7.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "cross-env BROWSER=all node --unhandled-rejections=strict test/*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Leitirion/Playwright.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Leitirion/Playwright/issues"
+    },
+    "homepage": "https://github.com/Leitirion/Playwright#readme"
 }
