@@ -1,0 +1,62 @@
+version: 2 
+jobs:
+  build:
+    docker:
+      - image: aslushnikov/playwright:bionic
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          command: npm ci
+
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./.local-browsers
+            
+      - run:
+          command: |
+            xvfb-run --auto-servernum npm run test
+          context: rpguia
+          store_artifacts: true
+          post-steps:
+            - run:
+                name: Build Success
+                when: on_success
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> ok ✅"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: touch files.tmp | find screenshots/*.png | xargs -I '{}' bash -c 'echo  "{\"type\":\"photo\",\"media\":\"https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/0/root/project/{}\"}" >> files.tmp' ; printf [ >>.tmp; cat files.tmp | paste -s -d ',' - >> .tmp;printf ] >>.tmp && echo "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMediaGroup?chat_id=$TELEGRAM_CHAT_ID&disable_notification=false"  | xargs curl -g -F "media=<.tmp"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> failed ❌"
+
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 5 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - cypress/run:
+          context: rpguia
+          store_artifacts: true
+          post-steps:
+            - run:
+                name: Build Success
+                when: on_success
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> ok ✅"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: touch files.tmp | find screenshots/*.png | xargs -I '{}' bash -c 'echo  "{\"type\":\"photo\",\"media\":\"https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/0/root/project/{}\"}" >> files.tmp' ; printf [ >>.tmp; cat files.tmp | paste -s -d ',' - >> .tmp;printf ] >>.tmp && echo "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMediaGroup?chat_id=$TELEGRAM_CHAT_ID&disable_notification=false"  | xargs curl -g -F "media=<.tmp"
+            - run:
+                name: Build failed
+                when: on_fail
+                command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> failed ❌"

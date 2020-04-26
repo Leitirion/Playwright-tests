@@ -1,5 +1,5 @@
 ### Playwright
-
+[![CircleCI](https://circleci.com/gh/Leitirion/Playwright.svg?style=svg)](https://circleci.com/gh/Leitirion/Playwright)
 ### Table of Contents
 
 - Maintainers:
