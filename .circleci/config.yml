@@ -16,8 +16,6 @@ jobs:
           paths:
             - ./.local-browsers   
       - run:
-          name: Build Success
-          when: on_success
           command: |
             xvfb-run --auto-servernum npm run ctest
             xvfb-run --auto-servernum npm run wtest
