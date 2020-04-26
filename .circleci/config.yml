@@ -18,7 +18,8 @@ jobs:
             
       - run:
           command: |
-            xvfb-run --auto-servernum npm run test
+            
+            cross-env BROWSER=all node --unhandled-rejections=strict test/*
           context: rpguia
           store_artifacts: true
           post-steps:
