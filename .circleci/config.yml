@@ -14,10 +14,9 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./.local-browsers   
-      - run:
-          context: rpguia
-          store_artifacts: true
-          post-steps:
+      context: rpguia
+      store_artifacts: true
+      post-steps:
             - run:
                 name: Build Success
                 when: on_success
