@@ -10,8 +10,6 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           command: npm ci
-      - run:
-          command: npm i cross-env
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
@@ -19,8 +17,11 @@ jobs:
             
       - run:
           command: |
+            xvfb-run --auto-servernum npm run ctest
+            xvfb-run --auto-servernum npm run wtest
+            xvfb-run --auto-servernum npm run ftest
             
-            cross-env BROWSER=all node --unhandled-rejections=strict test/*
+            
           context: rpguia
           store_artifacts: true
           post-steps:
