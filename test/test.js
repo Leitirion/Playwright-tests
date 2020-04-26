@@ -11,7 +11,7 @@ const playwright = require('playwright');
         await page.waitFor(5000);
         await page.screenshot({
             //  path: `screenshots/test-${browserType}.png` 
-            path: (`./screenshots/test-${browserType}.png`)
+            path: `./test-${browserType}.png`
         });
         await browser.close();
     }
