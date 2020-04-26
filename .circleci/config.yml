@@ -1,65 +1,30 @@
-version: 2.1 
-workflows:  
+version: 2.1
+jobs:
   build:
-    jobs:
-      docker:
-        - image: aslushnikov/playwright:bionic
-      steps:
-        - checkout
-        - restore_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
-        - run:
-            command: npm ci
-        - save_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
-            paths:
-              - ./.local-browsers   
-        - run:
-            command: |
-              xvfb-run --auto-servernum npm run ctest
-              xvfb-run --auto-servernum npm run wtest
-        - run:
-            context: rpguia
-            name: Build Success
-            when: on_success
-            command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> ok ✅"
-        - run:
-            context: rpguia    
-            name: Build failed
-            when: on_fail
-            command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> failed ❌"
-  nightly:
-    triggers:
-      - schedule:
-          cron: "45 13 * * *"
-          filters:
-            branches:
-              only:
-    jobs:
-      docker:
-        - image: aslushnikov/playwright:bionic
-      steps:
-        - checkout
-        - restore_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
-        - run:
-            command: npm ci
-        - save_cache:
-            key: dependency-cache-{{ checksum "package.json" }}
-            paths:
-              - ./.local-browsers   
-        - run:
-            command: |
-              xvfb-run --auto-servernum npm run ctest
-              xvfb-run --auto-servernum npm run wtest
-        - run:
-            context: rpguia
-            name: Build Success
-            when: on_success
-            command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> ok ✅"
-        - run:
-            context: rpguia    
-            name: Build failed
-            when: on_fail
-            command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> failed ❌"
-   
+    docker:
+      - image: aslushnikov/playwright:bionic
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          command: npm ci
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./.local-browsers   
+      - run:
+          command: |
+            xvfb-run --auto-servernum npm run ctest
+            xvfb-run --auto-servernum npm run wtest
+      - run:
+          context: rpguia
+          name: Build Success
+          when: on_success
+          command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=true&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> ok ✅"
+      - run:
+          context: rpguia    
+          name: Build failed
+          when: on_fail
+          command: curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage?disable_web_page_preview=false&chat_id=$TELEGRAM_CHAT_ID&parse_mode=HTML&disable_notification=false&text=<a href='$CIRCLE_BUILD_URL'>$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM</a> failed ❌"
+  
