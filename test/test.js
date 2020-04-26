@@ -1,7 +1,7 @@
 const playwright = require('playwright');
 
 (async () => {
-    for (const browserType of ['webkit']) {
+    for (const browserType of ['chromium', 'webkit']) {
         const browser = await playwright[browserType].launch();
         const context = await browser.newContext();
         const page = await context.newPage();
