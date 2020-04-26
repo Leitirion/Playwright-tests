@@ -16,9 +16,8 @@ jobs:
             - ./.local-browsers
             
       - run:
-          command: |
-            xvfb-run --auto-servernum npm run ctest
-            xvfb-run --auto-servernum npm run wtest
+          command: xvfb-run --auto-servernum npm run test
+            
             
             
             
