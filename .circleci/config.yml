@@ -17,6 +17,7 @@ jobs:
       - run:
           context: rpguia
           store_artifacts: true
+          post-steps:
             - run:
                 name: Build Success
                 when: on_success
