@@ -6,9 +6,10 @@ const playwright = require('playwright');
         const context = await browser.newContext();
         const page = await context.newPage();
         await page.goto('http://ya.ru');
+        await page.click('span[class="input__box"]');
         await page.type('span[class="input__box"]', `Hello ${browserType}!`);
-        //await page.click('button[class="button suggest2-form__button button_theme_websearch button_size_xl i-bem"]');
-        //await page.waitFor(5000);
+        await page.click('button[class="button suggest2-form__button button_theme_websearch button_size_xl i-bem"]');
+        await page.waitFor(5000);
         await page.screenshot({
             //  path: `screenshots/test-${browserType}.png` 
             path: `./test-${browserType}.png`
