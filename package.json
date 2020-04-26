@@ -14,8 +14,8 @@
     "devDependencies": {},
     "scripts": {
         "test": "cross-env BROWSER=all node --unhandled-rejections=strict test/*",
-        "ctest": "cross-env BROWSER=chromium node --unhandled-rejections=strict test/test.js",
-        "wtest": "cross-env BROWSER=webkit node --unhandled-rejections=strict test/test.js",
+        "ctest": "cross-env BROWSER=chromium node --unhandled-rejections=strict test/ctest.js",
+        "wtest": "cross-env BROWSER=webkit node --unhandled-rejections=strict test/wtest.js",
         "ftest": "cross-env BROWSER=firefox node --unhandled-rejections=strict test/*.js"
     },
     "repository": {
