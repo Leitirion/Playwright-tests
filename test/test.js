@@ -10,7 +10,10 @@ const playwright = require('playwright');
         await page.screenshot({ path: `screenshots/test-${browserType}-Hello.png` });
         await page.click('button[class="button suggest2-form__button button_theme_websearch button_size_xl i-bem"]');
         await page.waitFor(5000);
-        await page.screenshot({ path: `screenshots/test-${browserType}.png` });
+        await page.screenshot({
+            //  path: `screenshots/test-${browserType}.png` 
+            path: (`./screenshots/test-${browserType}.png`)
+        });
         await browser.close();
     }
 })();
