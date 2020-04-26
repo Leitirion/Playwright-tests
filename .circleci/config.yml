@@ -9,7 +9,9 @@ jobs:
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
-          command: npm ci
+          command: |
+            npm ci
+            npm i cross-env
 
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
