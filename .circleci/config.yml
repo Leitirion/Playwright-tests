@@ -1,7 +1,6 @@
-version: 2 
+version: 2.1
 jobs:
   build:
-    working_directory: ~/playwright
     docker:
       - image: aslushnikov/playwright:bionic
     steps:
