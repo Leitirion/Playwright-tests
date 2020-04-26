@@ -35,7 +35,7 @@ jobs:
             branches:
               only:
                 - master
-      build:
+    build:
         docker:
           - image: aslushnikov/playwright:bionic
         steps:
