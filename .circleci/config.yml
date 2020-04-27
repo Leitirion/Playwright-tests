@@ -15,9 +15,7 @@ jobs:
             - ./.local-browsers   
       - run:
           context: rpguia
-          command: |
-            xvfb-run --auto-servernum npm run ctest
-            xvfb-run --auto-servernum npm run wtest
+          command: echo $URL
       - run:
           context: rpguia
           name: Build Success
