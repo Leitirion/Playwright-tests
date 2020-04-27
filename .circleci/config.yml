@@ -1,6 +1,11 @@
 version: 2.1
+workflows:
+   my-workflow:
+     jobs:
+       - run-tests:
+           context: rpguia
 jobs:
-  build:
+  run-tests:
     docker:
       - image: aslushnikov/playwright:bionic
     steps:
@@ -14,7 +19,6 @@ jobs:
           paths:
             - ./.local-browsers   
       - run:
-          context: rpguia
           command: |
             xvfb-run --auto-servernum npm run ctest
             xvfb-run --auto-servernum npm run wtest
