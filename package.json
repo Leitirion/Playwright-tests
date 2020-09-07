@@ -16,7 +16,7 @@
     "devDependencies": {
         "@commitlint/cli": "^9.1.1",
         "@commitlint/config-conventional": "^9.1.2",
-        "husky": "^4.2.5"
+        "husky": "^4.3.0"
     },
     "scripts": {
         "test": "cross-env BROWSER=all node --unhandled-rejections=strict test/*",
