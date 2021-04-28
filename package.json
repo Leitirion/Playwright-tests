@@ -11,7 +11,7 @@
         "cross-env": "^7.0.3",
         "dotenv": "^8.2.0",
         "playwright": "^0.15.0",
-        "playwright-test": "^3.0.4"
+        "playwright-test": "^3.0.7"
     },
     "devDependencies": {
         "@commitlint/cli": "^12.1.1",
