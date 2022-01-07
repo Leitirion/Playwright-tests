@@ -23,7 +23,9 @@
 To start use with repo project you need:
 1) To install all files from package.json use command:
 
-```npm i```
+```
+npm i
+```
 
 3) To install playwright for tests use commands:
 
@@ -54,15 +56,21 @@ npx playwright install
 
 To run tests use command:
 
-```npm test```
+```
+npm test
+```
 
 To run tests headed use command:
 
-```npm run test:headed```
+```
+npm run test:headed
+```
 
 TO check you code run eslint with command:
 
-```npm run lint```
+```
+npm run lint
+```
 
 ----
 ## CI
