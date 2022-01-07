@@ -1,4 +1,4 @@
-### Playwright
+# [Playwright test on .js and .ts](https://playwright.dev/)
 [![CircleCI](https://circleci.com/gh/Leitirion/Playwright-tests/tree/master.svg?style=svg)](https://circleci.com/gh/Leitirion/Playwright-tests/tree/master)
 
 ## Table of contents
