@@ -10,13 +10,13 @@ test.describe("ui tests for brokers page", () => {
   }) => {
     const brokers = new Brokers(page);
     await brokers.goToFirstLocal();
-    await brokers.is_on_page();
+    await brokers.isOnPage();
   });
   test(`open direct brokers url with secondLocal cluster and check page's title`, async ({
     page,
   }) => {
-    const brokers2 = new Brokers(page);
-    await brokers2.goToSecondLocal();
-    await brokers2.is_on_page();
+    const brokers = new Brokers(page);
+    await brokers.goToSecondLocal();
+    await brokers.isOnPage();
   });
 });
