@@ -1,14 +1,14 @@
-import { expect, Locator, Page } from "@playwright/test";
+import { expect, Page } from "@playwright/test";
+import { BasePage } from "./base-page";
 
-export class Dashboard {
-  readonly page: Page;
-  readonly locator: Locator;
-
-  constructor(page: Page, locator: Locator) {
-    this.page = page;
-    this.expectLocator = page.locator("//head/title");
+export class Dashboard extends BasePage {
+  constructor(page: Page) {
+    super(page);
   }
-  async goto() {
-    await this.page.goto("");
+  async is_on_page() {
+    const titleOfPage = this.page.locator("//a[@title='Dashboard']");
+    await expect(titleOfPage).toHaveText("Dashboard");
+    await expect(titleOfPage).toBeVisible();
+    return this;
   }
 }

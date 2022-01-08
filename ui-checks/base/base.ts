@@ -23,10 +23,4 @@ export class BaseClass {
       await page.close();
     });
   }
-  async goto() {
-    await this.page.goto("");
-  }
-  async goToPlaywright() {
-    await this.page.goto("https://playwright.dev");
-  }
 }

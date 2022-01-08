@@ -1,13 +1,28 @@
-import { chromium, Browser, Page, test, expect } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import { BaseClass } from "../base/base";
-import { Dashboard } from "../pages/dashboard";
+import { BasePage } from "../pages/base-page";
 
 test.describe("Smokes tests for kafka-ui", () => {
   const base = new BaseClass();
   test.base;
-  test("got to page and check title", async ({ page }) => {
-    const dashboard = new Dashboard(page);
-    await dashboard.goto();
-    await expect(dashboard.expectLocator).toHaveText("UI for Apache Kafka");
+  test("go to mainPage page and check title", async ({ page }) => {
+    const mainPage = new BasePage(page);
+    await mainPage.goto();
+    await mainPage.titleIsOnPage();
+  });
+  test("go to mainPage page and check nav button text", async ({ page }) => {
+    const mainPage = new BasePage(page);
+    await mainPage.goto();
+    await mainPage.navButtonTextIsOnPage();
+  });
+  test("go to mainPage page and check Online title", async ({ page }) => {
+    const mainPage = new BasePage(page);
+    await mainPage.goto();
+    await mainPage.OnlineTitleIsOnPage();
+  });
+  test("go to mainPage page and check Offline title", async ({ page }) => {
+    const mainPage = new BasePage(page);
+    await mainPage.goto();
+    await mainPage.OfflineTitleIsOnPage();
   });
 });
