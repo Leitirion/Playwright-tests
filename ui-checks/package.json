@@ -6,10 +6,11 @@
   "scripts": {
     "lint": "eslint . --ext .ts",
     "test": "playwright test --config=config/playwright.config.ts --workers 2",
+    "test:api": "playwright test --config=config/playwright.config.ts --workers 2 /api-tests",
     "test:headed": "playwright test --config=config/playwright.config.ts --workers 2 --headed",
     "gen:sources": "rm -rf src/generated-sources && openapi-generator-cli generate",
     "prepare": "husky install",
-    "test:allure": "playwright test --config=config/playwright.config.ts --workers 2 --reporter=line,allure-playwright"
+    "test:allure":"playwright test --config=config/playwright.config.ts --workers 2 --reporter=line,allure-playwright"
   },
   "precommit": "lint",
   "keywords": [],

@@ -6,6 +6,7 @@ const config: PlaywrightTestConfig = {
     headless: true,
     baseURL: "http://localhost:8080/",
     screenshot: "only-on-failure",
+    video: "on",
   },
   //   reporter: "allure-playwright",
   testDir: "../tests",
