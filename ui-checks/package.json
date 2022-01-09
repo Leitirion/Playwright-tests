@@ -7,7 +7,9 @@
     "lint": "eslint . --ext .ts",
     "test": "playwright test --config=config/playwright.config.ts --workers 2",
     "test:headed": "playwright test --config=config/playwright.config.ts --workers 2 --headed",
-    "gen:sources": "rm -rf src/generated-sources && openapi-generator-cli generate"
+    "gen:sources": "rm -rf src/generated-sources && openapi-generator-cli generate",
+    "prepare": "husky install",
+    "test:allure": "playwright test --config=config/playwright.config.ts --workers 2 --reporter=line,allure-playwright"
   },
   "precommit": "lint",
   "keywords": [],
@@ -18,7 +20,9 @@
     "@types/chai": "^4.2.22",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
+    "allure-playwright": "^2.0.0-beta.14",
     "eslint": "^8.6.0",
+    "husky": "^7.0.4",
     "nodemon": "^2.0.13",
     "typescript": "^4.5.4"
   },

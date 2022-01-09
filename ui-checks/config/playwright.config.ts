@@ -7,6 +7,7 @@ const config: PlaywrightTestConfig = {
     baseURL: "http://localhost:8080/",
     screenshot: "only-on-failure",
   },
+  //   reporter: "allure-playwright",
   testDir: "../tests",
   testMatch: "tests/**/*.ts",
 };

@@ -1,6 +1,6 @@
 node_modules/
 test-results/
-
+allure-results/
 
 # generated sources
 src/generated-sources
