@@ -1,10 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { BaseClass } from "../base/base";
 import { BasePage } from "../pages/base-page";
 
 test.describe("Smokes tests for kafka-ui", () => {
-  const base = new BaseClass();
-  test.base;
   test.beforeEach(async ({ page }) => {
     const mainPage = new BasePage(page);
     await mainPage.goto();

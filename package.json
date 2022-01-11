@@ -7,28 +7,60 @@
         "test": "test"
     },
     "dependencies": {
-        "allure": "0.0.0",
+        "@openapitools/openapi-generator-cli": "^2.4.12",
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^10.1.0",
+        "babel-preset-airbnb": "^5.0.0",
+        "babel-preset-react-native": "^4.0.1",
+        "chai": "^4.3.4",
         "cross-env": "^7.0.3",
         "dotenv": "^10.0.0",
-        "playwright": "^0.15.0",
-        "playwright-test": "^7.2.2"
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-react": "^7.28.0",
+        "eslint-plugin-react-hooks": "^4.3.0",
+        "eslint-plugin-react-native": "^4.0.0",
+        "eslint-watch": "^8.0.0",
+        "kafkajs": "^1.15.0",
+        "node-fetch": "^2.6.5",
+        "prettier": "^2.5.1",
+        "prettier-eslint": "^13.0.0",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
         "@commitlint/cli": "^16.0.1",
         "@commitlint/config-conventional": "^16.0.0",
         "@playwright/test": "^1.17.1",
-        "husky": "^7.0.4"
+        "@types/chai": "^4.2.22",
+        "@typescript-eslint/eslint-plugin": "^5.9.0",
+        "@typescript-eslint/parser": "^5.9.0",
+        "allure-playwright": "^2.0.0-beta.14",
+        "eslint": "^8.6.0",
+        "husky": "^7.0.4",
+        "nodemon": "^2.0.13",
+        "typescript": "^4.5.4"
     },
     "scripts": {
-        "test": "cross-env BROWSER=all node --unhandled-rejections=strict test/*",
+        "test:env": "cross-env BROWSER=all node --unhandled-rejections=strict test/*",
         "ctest": "cross-env BROWSER=chromium node --unhandled-rejections=strict test/*.js",
         "wtest": "cross-env BROWSER=webkit node --unhandled-rejections=strict test/*.js",
-        "ftest": "cross-env BROWSER=firefox node --unhandled-rejections=strict test/*.js"
+        "ftest": "cross-env BROWSER=firefox node --unhandled-rejections=strict test/*.js",
+        "lint": "eslint . --ext .ts",
+        "test": "playwright test --config=config/playwright.config.ts --workers 2",
+        "test:api": "playwright test --config=config/playwright.config.ts --workers 2 /api-tests",
+        "test:headed": "playwright test --config=config/playwright.config.ts --workers 2 --headed",
+        "gen:sources": "rm -rf src/generated-sources && openapi-generator-cli generate",
+        "prepare": "husky install",
+        "test:allure": "playwright test --config=config/playwright.config.ts --workers 2 --reporter=line,allure-playwright"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Leitirion/Playwright.git"
     },
+    "precommit": "lint",
     "keywords": [],
     "author": "",
     "license": "ISC",

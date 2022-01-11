@@ -1,10 +1,7 @@
 import { test } from "@playwright/test";
-import { BaseClass } from "../base/base";
 import { Schemas } from "../pages/schemas";
 
 test.describe("ui tests for schemas page", () => {
-  const base = new BaseClass();
-  test.base;
   test(`open direct schemas url with local cluster and check page's title`, async ({
     page,
   }) => {
