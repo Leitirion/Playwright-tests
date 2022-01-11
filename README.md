@@ -7,12 +7,9 @@
 - [Environment variables](#environment-variables)
 - [How to install](#how-to-install)
 - [How to run](#how-to-run)
-- [How to write a check](#how-to-write-a-check)
 - [CI](#ci)
 - [Reporting](#reporting)
 - [Notifications](#notifications)
-- [Maintainers](#maintainers)
-- [Known Issues](#known-issues)
 - [Examples](#examples)
 - [Maintainer](#Maintainer)
 
@@ -79,7 +76,7 @@ In this project, you can use Allure Report with commands:
 1) To run tests with Allure ```npm run test:allure```
 2) To open Allure Report page ```allure serve```
 
-![alt "AllureReport"](./src/test/resources/AllureReport.png)
+![alt "AllureReport"](./resources/AllureReport.png)
 ----
 ## Notifications
 
