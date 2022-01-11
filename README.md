@@ -1,4 +1,4 @@
-# [Playwright automation on Typescript](https://playwright.dev/)
+# [Playwright](https://playwright.dev/) automation on Typescript
 
 ## Table of contents
 
