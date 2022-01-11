@@ -2,8 +2,8 @@ name: ui-checks
 on:
   push:
     paths:
-      - 'ui-checks/tests/**'
-      - 'ui-checks/**'
+      - 'tests/**'
+      - '**/pages'
   pull_request:
     types: [ 'opened', 'edited', 'reopened', 'synchronize' ]
     paths:
