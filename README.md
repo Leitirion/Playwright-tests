@@ -16,9 +16,9 @@
 ----
 ## Requirements
 
-|                                  Typescript                                   | Node.js | Playwright | CircleCI | Github Actions | Allure Report | Telegram |
-|:-----------------------------------------------------------------------------:|---------|:----------:|:--------:|:--------------:|:-------------:|:--------:|
-| <a href="url"><img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.icon-icons.com%2Ficons2%2F2107%2FPNG%2F512%2Ffile_type_typescript_icon_130108.png&imgrefurl=https%3A%2F%2Ficon-icons.com%2Ficon%2Ffile-type-typescript%2F130108&tbnid=n3ijt-RmLxb2vM&vet=12ahUKEwiWnb_qsKr1AhVL6CoKHeJSAzUQMygKegUIARDRAQ..i&docid=O2-Yt-ulO71ywM&w=512&h=512&itg=1&q=typescript%20logo&client=safari&ved=2ahUKEwiWnb_qsKr1AhVL6CoKHeJSAzUQMygKegUIARDRAQ" height="40" width="40" ></a> |         |            |          |                |               |          |
+|                      Typescript                       | Node.js                                                   |                          Playwright                           |                          CircleCI                           |                          Github Actions                          |                       Allure Report                       |                            Telegram                             |
+|:-----------------------------------------------------:|-----------------------------------------------------------|:-------------------------------------------------------------:|:-----------------------------------------------------------:|:----------------------------------------------------------------:|:---------------------------------------------------------:|:---------------------------------------------------------------:|
+| <img src="./resources/TS.png" width="40" height="40"> | <img src="./resources/NodeJS.png" width="40" height="40"> | <img src="./resources/Playwright.png" width="40" height="40"> | <img src="./resources/CircleCI.png" width="40" height="40"> | <img src="./resources/GithubActions.png" width="40" height="40"> | <img src="./resources/Allure.png" width="40" height="40"> | <img src="./resources/TelegramLogo.png" width="40" height="40"> |
 
 ----
 ## Coverage
@@ -84,7 +84,7 @@ npm run test:allure
 allure serve
 ```
 
-![alt "AllureReport"](./resources/AllureReport.png)
+![alt "AllureReport"](./resources/AllureNotifications.png)
 ----
 ## Notifications
 
