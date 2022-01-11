@@ -16,9 +16,9 @@
 ----
 ## Requirements
 
-|                      Typescript                       | Node.js                                                   |                          Playwright                           |                                     CircleCI                                      |                          Github Actions                          |                       Allure Report                       |                            Telegram                             |
-|:-----------------------------------------------------:|-----------------------------------------------------------|:-------------------------------------------------------------:|:---------------------------------------------------------------------------------:|:----------------------------------------------------------------:|:---------------------------------------------------------:|:---------------------------------------------------------------:|
-| <img src="./resources/TS.png" width="40" height="40"> | <img src="./resources/NodeJS.png" width="40" height="40"> | <img src="./resources/Playwright.png" width="40" height="40"> |                <img src="./resources/LogoCCI.png" width="40" height="40">                | <img src="./resources/GithubActions.png" width="40" height="40"> | <img src="./resources/Allure.png" width="40" height="40"> | <img src="./resources/TelegramLogo.png" width="40" height="40"> |
+|                    Typescript                     | Node.js                                                   |                          Playwright                           |                                     CircleCI                                      |                          Github Actions                          |                       Allure Report                       |                            Telegram                             |
+|:-------------------------------------------------:|-----------------------------------------------------------|:-------------------------------------------------------------:|:---------------------------------------------------------------------------------:|:----------------------------------------------------------------:|:---------------------------------------------------------:|:---------------------------------------------------------------:|
+| <img src="./.docs/TS.png" width="40" height="40"> | <img src="./.docs/NodeJS.png" width="40" height="40"> | <img src="./.docs/Playwright.png" width="40" height="40"> |                <img src="./.docs/LogoCCI.png" width="40" height="40">                | <img src="./.docs/GithubActions.png" width="40" height="40"> | <img src="./.docs/Allure.png" width="40" height="40"> | <img src="./.docs/TelegramLogo.png" width="40" height="40"> |
 
 ----
 ## Coverage
@@ -35,9 +35,11 @@
 ----
 ## How to install
 
-1. To install all packages from package.json use command ```npm i```
-2. (Optional) Create folder ```screenshots``` in your projects root folder.
-3. (Optional) Install cross-env with command ```npm install cross-env```
+To install all packages from package.json use command 
+```
+npm i
+```
+
 ----
 ## How to run
 
@@ -73,7 +75,6 @@ You can use two CI's in this project:
 ----
 ## Reporting
 
-In this project, you can use Allure Report with commands: 
 1) To run tests with Allure 
 
 ```
@@ -88,12 +89,12 @@ allure serve
 ----
 ## Notifications
 
-In this project, you have telegram notifications after running tests in CI.
+You have telegram notifications after running tests in CI.
 
 ----
 ## Examples
 
-In this project, in a folder ```<project_name>/tests/**``` you can find some test examples.
+In a folder ```<project_name>/tests/**``` you can find some test examples.
 
 ----
 ## Maintainer

@@ -44,10 +44,6 @@
         "typescript": "^4.5.4"
     },
     "scripts": {
-        "test:env": "cross-env BROWSER=all node --unhandled-rejections=strict test/*",
-        "ctest": "cross-env BROWSER=chromium node --unhandled-rejections=strict test/*.js",
-        "wtest": "cross-env BROWSER=webkit node --unhandled-rejections=strict test/*.js",
-        "ftest": "cross-env BROWSER=firefox node --unhandled-rejections=strict test/*.js",
         "lint": "eslint . --ext .ts",
         "test": "playwright test --config=config/playwright.config.ts --workers 2",
         "test:api": "playwright test --config=config/playwright.config.ts --workers 2 /api-tests",

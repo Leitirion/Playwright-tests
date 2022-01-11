@@ -33,7 +33,7 @@ test.describe("api tests for dashboard page", () => {
     console.log(await response.json());
   });
   //Update
-  test.only("Patch(Modify) topic", async ({ request }) => {
+  test("Patch(Modify) topic", async ({ request }) => {
     const response = await request.patch(`${url}/${topicName}`, {
       data: {
         cleanUpPolicy: "DELETE",
