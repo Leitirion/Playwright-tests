@@ -35,7 +35,7 @@
 ----
 ## How to install
 
-1. To install all packages from package.json use command```npm i```
+1. To install all packages from package.json use command ```npm i```
 2. (Optional) Create folder ```screenshots``` in your projects root folder.
 3. (Optional) Install cross-env with command ```npm install cross-env```
 ----
@@ -58,6 +58,7 @@ To check your code, run eslint with the command:
 ```
 npm run lint
 ```
+And other commands in scripts in ```package.json```
 
 ----
 ## CI
