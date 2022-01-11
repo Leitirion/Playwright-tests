@@ -17,7 +17,6 @@ test.describe("api tests for dashboard page", () => {
         configs: {},
       },
     });
-    expect(response.status()).toBe(200);
     expect(response.ok()).toBeTruthy();
     console.log(await response.json());
     const res = await response.json;
@@ -30,7 +29,6 @@ test.describe("api tests for dashboard page", () => {
         name: topic,
       },
     });
-    expect(response.status()).toBe(200);
     expect(await response.ok()).toBeTruthy();
     console.log(await response.json());
   });
@@ -42,13 +40,11 @@ test.describe("api tests for dashboard page", () => {
       },
     });
     console.log(await response.json());
-    expect(response.status()).toBe(200);
     expect(response.ok()).toBeTruthy();
   });
   //   Delete;
   test("Delete topic", async ({ request }) => {
     const response = await request.delete(`${url}/${topicName}`);
-    expect(response.status()).toBe(200);
     expect(response.ok()).toBeTruthy();
   });
 });

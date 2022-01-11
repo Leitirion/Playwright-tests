@@ -7,8 +7,8 @@ test.describe("api test for dashboard page", () => {
     await mainPage.goto();
     const response = await Promise.all([
       page.click('//*[@id="root"]//nav//a[text()="UI for Apache Kafka"]'),
-      page.waitForResponse((res) => res.status() == 200),
     ]);
+    expect(response.ok()).toBeTruthy();
     console.log(await JSON.stringify(response));
   });
 });
