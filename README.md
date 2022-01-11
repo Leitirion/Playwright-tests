@@ -85,7 +85,7 @@ npm run test:allure
 allure serve
 ```
 
-![alt "AllureReport"](./resources/AllureNotifications.png)
+![alt "AllureReport"](./.docs/AllureNotifications.png)
 ----
 ## Notifications
 
