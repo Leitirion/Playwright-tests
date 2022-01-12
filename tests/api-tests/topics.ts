@@ -17,7 +17,7 @@ test.describe("api tests for dashboard page", () => {
         configs: {},
       },
     });
-    expect(response.ok()).toBeTruthy();
+    expect(await response.ok()).toBeTruthy();
     console.log(await response.json());
     const res = await response.json;
     topic = res.name;
