@@ -15,7 +15,7 @@ test.describe("api tests for dashboard page", () => {
         configs: {},
       },
     });
-    expect(await newResponse.ok()).toBeTruthy();
+    expect(newResponse.ok()).toBeTruthy();
     console.log(await newResponse.json());
   });
   // Get
@@ -41,6 +41,6 @@ test.describe("api tests for dashboard page", () => {
   // Delete;
   test("Delete topic", async ({ request }) => {
     const response = await request.delete(`${url}/${topicName}`);
-    expect(await response.ok()).toBeTruthy();
+    expect(response.ok()).toBeTruthy();
   });
 });
