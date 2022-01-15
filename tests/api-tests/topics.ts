@@ -26,18 +26,18 @@ test.describe("api tests for dashboard page", () => {
     console.log(await response.json());
   });
   // Update
-//   test("Patch(Modify) topic parameters", async ({ request }) => {
-//     const response = await request.patch(`${url}/${topicName}`, {
-//       data: {
-//         name: topicName,
-//         partitions: 1,
-//         replicationFactor: 1,
-//         configs: {},
-//       },
-//     });
-//     expect(await response.ok()).toBeTruthy();
-//     console.log(await response.json());
-  });
+  //   test("Patch(Modify) topic parameters", async ({ request }) => {
+  //     const response = await request.patch(`${url}/${topicName}`, {
+  //       data: {
+  //         name: topicName,
+  //         partitions: 1,
+  //         replicationFactor: 1,
+  //         configs: {},
+  //       },
+  //     });
+  //     expect(await response.ok()).toBeTruthy();
+  //     console.log(await response.json());
+  // });
   // Delete;
   test("Delete topic", async ({ request }) => {
     const response = await request.delete(`${url}/${topicName}`);
