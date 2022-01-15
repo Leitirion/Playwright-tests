@@ -15,9 +15,16 @@ test.describe("api tests for dashboard page", () => {
         configs: {},
       },
     });
+<<<<<<< HEAD
     expect(await newResponse.ok()).toBeTruthy();
     console.log(await newResponse.json());
     //Get
+=======
+    expect(await response.ok()).toBeTruthy();
+    console.log(await response.json());
+    const res = await response.json;
+    topic = res.name;
+>>>>>>> 869672b045d74611271cdf1e5cabeef77234befe
   });
   //Get
   test("Use get request to check topic's name", async ({ request }) => {
