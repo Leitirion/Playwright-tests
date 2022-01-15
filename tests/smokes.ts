@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
 import { BasePage } from "../pages/base-page";
 
 test.describe("Smokes tests for kafka-ui", () => {
