@@ -19,7 +19,7 @@ test.describe("api tests for dashboard page", () => {
     console.log(await newResponse.json());
   });
   // Get
-  test("Use get request to check topic's name", async ({ request }) => {
+  test("Using get request to check topic's name", async ({ request }) => {
     const response = await request.get(`${url}/${topicName}`);
     expect(response.ok()).toBeTruthy();
     expect((await response.json()).name).toEqual(topicName);
@@ -39,7 +39,7 @@ test.describe("api tests for dashboard page", () => {
   //     console.log(await response.json());
   // });
   // Delete;
-  test("Delete topic", async ({ request }) => {
+  test("Using a delete request to remove new.topic ", async ({ request }) => {
     const response = await request.delete(`${url}/${topicName}`);
     expect(response.ok()).toBeTruthy();
   });
