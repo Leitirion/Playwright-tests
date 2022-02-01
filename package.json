@@ -7,7 +7,7 @@
         "test": "test"
     },
     "dependencies": {
-        "@openapitools/openapi-generator-cli": "^2.4.12",
+        "@openapitools/openapi-generator-cli": "^2.4.26",
         "babel-core": "^6.26.3",
         "babel-eslint": "^10.1.0",
         "babel-preset-airbnb": "^5.0.0",
