@@ -25,7 +25,7 @@
         "eslint-plugin-react-native": "^4.0.0",
         "eslint-watch": "^8.0.0",
         "kafkajs": "^1.16.0",
-        "node-fetch": "^3.2.2",
+        "node-fetch": "^3.2.4",
         "prettier": "^2.5.1",
         "prettier-eslint": "^13.0.0",
         "uuid": "^8.3.2"
@@ -33,7 +33,7 @@
     "devDependencies": {
         "@commitlint/cli": "^16.2.1",
         "@commitlint/config-conventional": "^16.2.1",
-        "@playwright/test": "^1.20.1",
+        "@playwright/test": "^1.21.1",
         "@types/chai": "^4.2.22",
         "@typescript-eslint/eslint-plugin": "^5.19.0",
         "@typescript-eslint/parser": "^5.17.0",
