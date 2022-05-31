@@ -37,7 +37,7 @@
         "@types/chai": "^4.2.22",
         "@typescript-eslint/eslint-plugin": "^5.27.0",
         "@typescript-eslint/parser": "^5.25.0",
-        "allure-playwright": "^2.0.0-beta.14",
+        "allure-playwright": "^2.0.0-beta.16",
         "eslint": "^8.15.0",
         "husky": "^7.0.4",
         "nodemon": "^2.0.13",
