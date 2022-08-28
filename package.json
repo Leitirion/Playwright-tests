@@ -35,10 +35,10 @@
         "@commitlint/config-conventional": "^17.0.3",
         "@playwright/test": "^1.25.0",
         "@types/chai": "^4.2.22",
-        "@typescript-eslint/eslint-plugin": "^5.34.0",
+        "@typescript-eslint/eslint-plugin": "^5.35.1",
         "@typescript-eslint/parser": "^5.33.1",
         "allure-playwright": "^2.0.0-beta.19",
-        "eslint": "^8.15.0",
+        "eslint": "^8.22.0",
         "husky": "^7.0.4",
         "nodemon": "^2.0.19",
         "typescript": "^4.7.4"
