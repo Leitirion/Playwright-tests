@@ -28,7 +28,7 @@
         "node-fetch": "^3.2.10",
         "prettier": "^2.5.1",
         "prettier-eslint": "^15.0.1",
-        "uuid": "^8.3.2"
+        "uuid": "^9.0.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.1.2",
