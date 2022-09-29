@@ -33,9 +33,9 @@
     "devDependencies": {
         "@commitlint/cli": "^17.1.2",
         "@commitlint/config-conventional": "^17.0.3",
-        "@playwright/test": "^1.26.0",
+        "@playwright/test": "^1.26.1",
         "@types/chai": "^4.2.22",
-        "@typescript-eslint/eslint-plugin": "^5.38.0",
+        "@typescript-eslint/eslint-plugin": "^5.38.1",
         "@typescript-eslint/parser": "^5.38.1",
         "allure-playwright": "^2.0.0-beta.19",
         "eslint": "^8.24.0",
