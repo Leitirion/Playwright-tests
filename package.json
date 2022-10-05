@@ -34,7 +34,7 @@
         "@commitlint/cli": "^17.1.2",
         "@commitlint/config-conventional": "^17.1.0",
         "@playwright/test": "^1.26.1",
-        "@types/chai": "^4.2.22",
+        "@types/chai": "^4.3.3",
         "@typescript-eslint/eslint-plugin": "^5.39.0",
         "@typescript-eslint/parser": "^5.39.0",
         "allure-playwright": "^2.0.0-beta.19",
