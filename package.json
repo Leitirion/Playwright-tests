@@ -24,7 +24,7 @@
         "eslint-plugin-react-hooks": "^4.6.0",
         "eslint-plugin-react-native": "^4.0.0",
         "eslint-watch": "^8.0.0",
-        "kafkajs": "^2.2.0",
+        "kafkajs": "^2.2.1",
         "node-fetch": "^3.2.10",
         "prettier": "^2.5.1",
         "prettier-eslint": "^15.0.1",
