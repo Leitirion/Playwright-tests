@@ -33,7 +33,7 @@
     "devDependencies": {
         "@commitlint/cli": "^17.4.0",
         "@commitlint/config-conventional": "^17.2.0",
-        "@playwright/test": "^1.29.1",
+        "@playwright/test": "^1.29.2",
         "@types/chai": "^4.3.4",
         "@typescript-eslint/eslint-plugin": "^5.48.2",
         "@typescript-eslint/parser": "^5.49.0",
