@@ -36,7 +36,7 @@
         "@playwright/test": "^1.33.0",
         "@types/chai": "^4.3.5",
         "@typescript-eslint/eslint-plugin": "^5.59.2",
-        "@typescript-eslint/parser": "^5.59.1",
+        "@typescript-eslint/parser": "^5.59.2",
         "allure-playwright": "^2.2.1",
         "eslint": "^8.40.0",
         "husky": "^8.0.3",
