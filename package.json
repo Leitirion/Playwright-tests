@@ -38,7 +38,7 @@
         "@typescript-eslint/eslint-plugin": "^5.59.6",
         "@typescript-eslint/parser": "^5.59.6",
         "allure-playwright": "^2.3.0",
-        "eslint": "^8.40.0",
+        "eslint": "^8.41.0",
         "husky": "^8.0.3",
         "nodemon": "^2.0.22",
         "typescript": "^5.0.4"
